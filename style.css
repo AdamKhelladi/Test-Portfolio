@@ -1,0 +1,381 @@
+/* Start Var */
+:root {
+  --main-color: #1093ff;
+  --secondary-color: #0062b371;
+}
+/* End Var */
+
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #202020;
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+/* End Global Rules */
+
+/* Start Header */
+.header {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.header .container {
+  height: 56px;
+  margin-left: 8%;
+  margin-right: 8%;
+  border-bottom: 1px solid #1093ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .container .logo {
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+
+  /* margin-right: auto; */
+}
+
+.header .container .cta {
+  text-decoration: none;
+  padding: 0 20px;
+}
+
+.header .container .cta button {
+  background-color: #1093ff;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  padding: 7px 15px;
+  font-size: 15px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.header .container .cta button:hover {
+  background-color: #008cffc7;
+}
+
+.header .container nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .container nav ul {
+  display: flex;
+}
+
+.header .container nav ul li {
+  padding: 0 20px;
+}
+
+.header .container nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.header .container nav ul li .active {
+  color: #92ceff;
+}
+
+.header .container nav ul li a:hover {
+  color: #92ceff;
+}
+
+.header .container nav i {
+  font-size: 23px;
+  transition: .3s;
+  color: #1093ff;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.header .container nav i:hover {
+  color: #008cffc7;
+}
+
+.header .container nav i {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .header .container nav i {
+    display: block;
+  }
+
+  .header .container nav ul {
+    display: none;
+  }
+
+  .header .container .logo {
+    margin-right: auto;
+  }
+
+  .header .container {
+    justify-content: flex-end;
+  }
+
+  .header .container i:hover + ul {
+    position: absolute;
+    width: 60%;
+    left: 18%;
+    top: 70px;
+    background-color: #0062b371;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    z-index: 10;
+  }
+
+  .header .container i:hover + ul li {
+    padding: 20px;
+    text-align: center;
+  }
+}
+/* End Header */
+
+/* Start Landing */
+.landing {
+  height: 76vh;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.landing .container {
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-top: 100px;
+
+  display: grid;
+  grid-template-columns: 35% 280px;
+  gap: 300px;
+}
+
+.landing .container .text {
+  padding: 60px 30px 30px 60px;
+  width: 550px;
+}
+
+.landing .container .text h1 {
+  margin-bottom: 10px;
+}
+
+.landing .container .text h3 {
+  color: #1093ff;
+  margin-bottom: 17px;
+}
+
+.landing .container .text p {
+  color: rgba(213, 236, 255, 0.659);
+  line-height: 1.5;
+}
+
+.landing .container .pic {
+  width: 280px;
+  position: relative;
+}
+
+.landing .container .pic::before {
+  content: "";
+  position: absolute;
+  background-color: #1093ff36;
+  width: 300px;
+  height: 340px;
+  top: 58px;
+  right: -50px;
+  z-index: -1;
+}
+
+.landing .container .pic img {
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .landing .container .pic {
+    display: none;
+  }
+
+  .landing .container .text {
+    width: 285%;
+    background-color: #1093ff2f;
+    border-radius: 10px;
+    padding-top: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .landing .container .text {
+    background-color: transparent;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .landing .container .text h1 {
+    font-size: 25px;
+  }
+
+  .landing .container .text h3 {
+    font-size: 20px;
+  }
+
+  .landing .container .text p {
+    font-size: 14px;
+  }
+}
+/* Start Landing */
+
+/* Start Pricing */
+.pricing {
+  background-color: rgb(226, 226, 226);
+  color: white;
+
+  padding: 100px 0px;
+}
+
+.pricing .container {
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.pricing .container .title {
+  font-size: 40px;
+  font-weight: 800;
+  text-align: center;
+  color: var(--secondary-color);
+  opacity: 0.5;
+}
+
+.pricing .container .cards {
+  padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+@media (max-width: 929px) {
+  .pricing .container .cards {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr))
+  }
+
+  .pricing .container .title {
+    font-size: 30px;
+  }
+
+  .pricing .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.pricing .container .cards .card {
+  background-color: #005568;
+  border: 2px solid rgb(0, 204, 255);
+  padding: 40px 30px;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.pricing .container .cards .card .head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pricing .container .cards .card .head .type {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.pricing .container .cards .card .head .price {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.pricing .container .cards .card .head .price span {
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.pricing .container .cards .card ul {
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.pricing .container .cards .card ul li {
+  position: relative;
+  margin-bottom: 5px;
+  padding-left: 15px;
+}
+
+.pricing .container .cards .card ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 40%;
+  background-color: #92ceff;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.pricing .container .cards .card ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: text;
+}
+
+.pricing .container .cards .card .btn {
+  text-decoration: none;
+  text-align: center;
+}
+
+.pricing .container .cards .card .btn button {
+  color: white;
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid rgb(0, 162, 202);
+  color: white;
+  border-radius: 10px;
+  padding: 13px 15px;
+  font-size: 18px;
+  font-weight: 400;
+  
+  cursor: pointer;
+  transition: .3s;
+}
+
+.pricing .container .cards .card .btn button:hover {
+  background-color: rgb(0, 162, 202);
+}
+
+/* End Pricing */
